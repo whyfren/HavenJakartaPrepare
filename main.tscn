@@ -11,17 +11,20 @@
 [node name="TestMap" parent="." unique_id=142838275 instance=ExtResource("1_h2yge")]
 scale = Vector2(9, 9)
 
-[node name="Player" parent="." unique_id=894384731 instance=ExtResource("1_ig7tw")]
+[node name="Level" type="Node2D" parent="." unique_id=1502134837]
+y_sort_enabled = true
+
+[node name="Player" parent="Level" unique_id=894384731 instance=ExtResource("1_ig7tw")]
 position = Vector2(119, 22)
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=651239542]
+[node name="Icon" type="Sprite2D" parent="Level" unique_id=651239542]
 position = Vector2(-113, -132)
 texture = ExtResource("2_0xm2m")
 
-[node name="tiang" parent="." unique_id=2061638180 instance=ExtResource("5_7mycd")]
+[node name="tiang" parent="Level" unique_id=2061638180 instance=ExtResource("5_7mycd")]
 position = Vector2(591, -445)
 scale = Vector2(3, 3)
 
-[node name="chest" parent="." unique_id=1506845970 instance=ExtResource("4_lquwl")]
+[node name="chest" parent="Level" unique_id=1506845970 instance=ExtResource("4_lquwl")]
 position = Vector2(-227.00002, 430)
 scale = Vector2(3, 3)
