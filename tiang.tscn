@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dhnrap1cocy62"]
+
+[ext_resource type="Texture2D" uid="uid://baoulwiltvy3x" path="res://obstacle/Pole_outline_black1.png" id="1_i1qwp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aiuig"]
+radius = 23.0
+height = 92.0
+
+[node name="tiang" type="StaticBody2D" unique_id=2061638180]
+position = Vector2(240, 127)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=237377794]
+scale = Vector2(3, 3)
+texture = ExtResource("1_i1qwp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831067495]
+shape = SubResource("CapsuleShape2D_aiuig")
