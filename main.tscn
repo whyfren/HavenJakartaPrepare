@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://blbykpdqyg2bc" path="res://test_map.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cencejwqrmax3" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dkdhf5lg7nqk5" path="res://icon.svg" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bq6y37psv75n5" path="res://chest.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dhnrap1cocy62" path="res://tiang.tscn" id="5_7mycd"]
 
 [node name="Main" type="Node2D" unique_id=698439086]
 
@@ -15,3 +17,11 @@ position = Vector2(119, 22)
 [node name="Icon" type="Sprite2D" parent="." unique_id=651239542]
 position = Vector2(-113, -132)
 texture = ExtResource("2_0xm2m")
+
+[node name="chest" parent="." unique_id=2061638180 instance=ExtResource("4_lquwl")]
+position = Vector2(-266, 170)
+scale = Vector2(3, 3)
+
+[node name="tiang" parent="." unique_id=42099434 instance=ExtResource("5_7mycd")]
+position = Vector2(580, -617)
+scale = Vector2(3, 3)

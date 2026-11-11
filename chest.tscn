@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bq6y37psv75n5"]
+
+[ext_resource type="Texture2D" uid="uid://c1iy3f35w4ptl" path="res://obstacle/Chest_black.png" id="1_twpm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1qwp"]
+size = Vector2(54, 50)
+
+[node name="chest" type="StaticBody2D" unique_id=2061638180]
+position = Vector2(675, 241)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=237377794]
+position = Vector2(-52, 8)
+scale = Vector2(3, 3)
+texture = ExtResource("1_twpm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831067495]
+position = Vector2(-52, 8)
+shape = SubResource("RectangleShape2D_i1qwp")
