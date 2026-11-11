@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://ciq2ujkbx2uo7"]
 
 [ext_resource type="PackedScene" uid="uid://blbykpdqyg2bc" path="res://test_map.tscn" id="1_h2yge"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://dkdhf5lg7nqk5" path="res://icon.svg" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dnhxsykfrpyo2" path="res://knightplayer.tscn" id="2_lquwl"]
+=======
+[ext_resource type="PackedScene" uid="uid://cencejwqrmax3" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dufgewbn3g71h" path="res://npc.tscn" id="4_7mycd"]
+>>>>>>> 97ddbfb76f6e8ffa4f45a19028a2754658c79e56
 [ext_resource type="PackedScene" uid="uid://bq6y37psv75n5" path="res://chest.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dhnrap1cocy62" path="res://tiang.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cvdn14qmd70d4" path="res://coins.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D" unique_id=698439086]
 
@@ -14,16 +20,27 @@ scale = Vector2(9, 9)
 [node name="Level" type="Node2D" parent="." unique_id=1502134837]
 y_sort_enabled = true
 
+<<<<<<< HEAD
 [node name="knightplayer" parent="Level" unique_id=107630186 instance=ExtResource("2_lquwl")]
 
 [node name="Icon" type="Sprite2D" parent="Level" unique_id=651239542]
 position = Vector2(-113, -132)
 texture = ExtResource("2_0xm2m")
+=======
+[node name="Player" parent="Level" unique_id=894384731 instance=ExtResource("1_ig7tw")]
+position = Vector2(71, 649)
+>>>>>>> 97ddbfb76f6e8ffa4f45a19028a2754658c79e56
 
 [node name="tiang" parent="Level" unique_id=2061638180 instance=ExtResource("5_7mycd")]
 position = Vector2(591, -445)
 scale = Vector2(3, 3)
 
+[node name="NPC" parent="Level" unique_id=186265117 instance=ExtResource("4_7mycd")]
+position = Vector2(-187, -35)
+
 [node name="chest" parent="Level" unique_id=1506845970 instance=ExtResource("4_lquwl")]
 position = Vector2(-227.00002, 430)
 scale = Vector2(3, 3)
+
+[node name="coins" parent="Level" unique_id=1224003275 instance=ExtResource("6_7mycd")]
+position = Vector2(15, 221)
