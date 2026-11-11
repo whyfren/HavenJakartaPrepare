@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://5mecixpol7fy"]
+
+[ext_resource type="Texture2D" uid="uid://cqtpj4thcqvlg" path="res://asset/UI/1103-1920x1080-desktop-full-hd-minecraft-background.webp" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://bhvpfgm7p5lsk" path="res://UI/main_menu.gd" id="1_tk8dj"]
+
+[node name="MainMenu" type="Control" unique_id=613619843]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tk8dj")
+
+[node name="Background" type="TextureRect" parent="." unique_id=3018849]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -7.0
+offset_right = 1156.0
+offset_bottom = 653.0
+texture = ExtResource("1_06t4h")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1174545564]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 112.0
+offset_right = 508.0
+offset_bottom = 240.0
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=785433674]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1220270820]
+layout_mode = 2
+text = "Game Suka-Suka"
+
+[node name="Start" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1642153492]
+layout_mode = 2
+text = "Start"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=371464684]
+layout_mode = 2
+text = "Settings"
+
+[node name="Exits" type="Button" parent="CenterContainer/VBoxContainer" unique_id=957162855]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exits" to="." method="_on_exits_pressed"]
