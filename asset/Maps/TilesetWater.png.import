@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baoulwiltvy3x"
-path="res://.godot/imported/Pole_outline_black1.png-69754d9e305b1e70ba54e48c69ca2c2b.ctex"
+uid="uid://cafn6o0vtaoka"
+path="res://.godot/imported/TilesetWater.png-c109863cc121412e765bdfed351071ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacle/Pole_outline_black1.png"
-dest_files=["res://.godot/imported/Pole_outline_black1.png-69754d9e305b1e70ba54e48c69ca2c2b.ctex"]
+source_file="res://asset/Maps/TilesetWater.png"
+dest_files=["res://.godot/imported/TilesetWater.png-c109863cc121412e765bdfed351071ec.ctex"]
 
 [params]
 

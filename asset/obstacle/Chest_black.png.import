@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7yhyhpm85ix"
-path="res://.godot/imported/TilesetInterior.png-10a7e3b36daf0e5fcffe8054ef15908f.ctex"
+uid="uid://c1iy3f35w4ptl"
+path="res://.godot/imported/Chest_black.png-ea69eb9bcd69d4f7f5713c8e73416489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/Interior/TilesetInterior.png"
-dest_files=["res://.godot/imported/TilesetInterior.png-10a7e3b36daf0e5fcffe8054ef15908f.ctex"]
+source_file="res://asset/obstacle/Chest_black.png"
+dest_files=["res://.godot/imported/Chest_black.png-ea69eb9bcd69d4f7f5713c8e73416489.ctex"]
 
 [params]
 

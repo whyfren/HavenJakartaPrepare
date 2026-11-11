@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1bo0row8nrpn"
-path="res://.godot/imported/TilesetVillageAbandoned.png-bf7593d34623d071795f9f40b91e6eac.ctex"
+uid="uid://l0yicbg4laj4"
+path="res://.godot/imported/TilesetHole.png-a6c26f7b3fdffa89bdc57391f1829c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TilesetVillageAbandoned.png"
-dest_files=["res://.godot/imported/TilesetVillageAbandoned.png-bf7593d34623d071795f9f40b91e6eac.ctex"]
+source_file="res://asset/Maps/TilesetHole.png"
+dest_files=["res://.godot/imported/TilesetHole.png-a6c26f7b3fdffa89bdc57391f1829c9c.ctex"]
 
 [params]
 

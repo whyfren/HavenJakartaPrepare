@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l0yicbg4laj4"
-path="res://.godot/imported/TilesetHole.png-d7463df2bc615987b969001e5933c1c0.ctex"
+uid="uid://w7w8bw8h6dkx"
+path="res://.godot/imported/TilesetLogic.png-1acd0ca01f1158a0b887f6778d3cc5d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TilesetHole.png"
-dest_files=["res://.godot/imported/TilesetHole.png-d7463df2bc615987b969001e5933c1c0.ctex"]
+source_file="res://asset/Maps/TilesetLogic.png"
+dest_files=["res://.godot/imported/TilesetLogic.png-1acd0ca01f1158a0b887f6778d3cc5d7.ctex"]
 
 [params]
 

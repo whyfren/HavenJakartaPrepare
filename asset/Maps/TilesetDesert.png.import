@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f6b3rf5uqm5t"
-path="res://.godot/imported/TilesetRelief.png-88fecb1e9a9c810d4414b7a9dfd70c1d.ctex"
+uid="uid://bxh5373qqkd7s"
+path="res://.godot/imported/TilesetDesert.png-91a28f746553ae27889ae4c5f5677608.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TilesetRelief.png"
-dest_files=["res://.godot/imported/TilesetRelief.png-88fecb1e9a9c810d4414b7a9dfd70c1d.ctex"]
+source_file="res://asset/Maps/TilesetDesert.png"
+dest_files=["res://.godot/imported/TilesetDesert.png-91a28f746553ae27889ae4c5f5677608.ctex"]
 
 [params]
 
