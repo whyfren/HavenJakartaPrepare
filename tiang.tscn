@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhnrap1cocy62"]
 
-[ext_resource type="Texture2D" path="res://obstacle/Pole_outline_black1.png" id="1_i1qwp"]
+[ext_resource type="Texture2D" path="res://asset/obstacle/Pole_outline_black1.png" id="1_i1qwp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18yqj"]
 radius = 23.769728
