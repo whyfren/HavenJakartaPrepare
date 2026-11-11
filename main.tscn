@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ciq2ujkbx2uo7"]
 
 [ext_resource type="PackedScene" uid="uid://blbykpdqyg2bc" path="res://test_map.tscn" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cencejwqrmax3" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dkdhf5lg7nqk5" path="res://icon.svg" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dnhxsykfrpyo2" path="res://knightplayer.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bq6y37psv75n5" path="res://chest.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dhnrap1cocy62" path="res://tiang.tscn" id="5_7mycd"]
 
@@ -14,8 +14,7 @@ scale = Vector2(9, 9)
 [node name="Level" type="Node2D" parent="." unique_id=1502134837]
 y_sort_enabled = true
 
-[node name="Player" parent="Level" unique_id=894384731 instance=ExtResource("1_ig7tw")]
-position = Vector2(119, 22)
+[node name="knightplayer" parent="Level" unique_id=107630186 instance=ExtResource("2_lquwl")]
 
 [node name="Icon" type="Sprite2D" parent="Level" unique_id=651239542]
 position = Vector2(-113, -132)
