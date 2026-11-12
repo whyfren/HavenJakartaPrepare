@@ -16,6 +16,7 @@ var shoot_time_left := 0.0
 @export var player: Node2D
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	randomize()
@@ -60,4 +61,5 @@ func _shoot_fireball(target_position: Vector2) -> void:
 	fireball.direction = direction
 	fireball.speed = FIREBALL_SPEED
 	fireball.lifetime = FIREBALL_LIFETIME
+	audio.play()
 	get_tree().current_scene.add_child(fireball)

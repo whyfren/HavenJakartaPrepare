@@ -2,6 +2,7 @@ extends Area2D
 
 const HIT_EFFECT_SCENE := preload("res://entity/projectile/hit.tscn")
 
+
 @export var speed: float = 420.0
 @export var damage: float = 5.0
 @export var lifetime: float = 3.0
@@ -50,6 +51,7 @@ func _explode() -> void:
 	if _exploded:
 		return
 	_exploded = true
+	Audiomanager.play_sfx("blast")
 	if HIT_EFFECT_SCENE and get_tree().current_scene:
 		var hit := HIT_EFFECT_SCENE.instantiate()
 		hit.global_position = global_position

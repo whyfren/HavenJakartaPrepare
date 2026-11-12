@@ -15,6 +15,12 @@ offset_right = 1154.0
 offset_bottom = 648.0
 script = ExtResource("1_yxx3c")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=981057811]
+layout_mode = 0
+offset_right = 1170.0
+offset_bottom = 651.0
+color = Color(1, 0, 0, 0.49803922)
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1174545564]
 layout_mode = 0
 offset_left = 376.0
