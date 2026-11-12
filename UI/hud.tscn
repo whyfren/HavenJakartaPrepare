@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dc8ldq2y53pwc"]
+
+[ext_resource type="Script" uid="uid://eb36dhuhxsil" path="res://UI/hud.gd" id="1_37p78"]
+
+[node name="HUD" type="Control" unique_id=634769212]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37p78")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=74319950]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 22.0
+offset_right = 1068.0
+offset_bottom = 66.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=1251942918]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 33.0
+offset_right = 68.0
+offset_bottom = 56.0
+text = "hp"
+
+[node name="Pause" type="Button" parent="." unique_id=1224613238]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 22.0
+offset_right = 1144.0
+offset_bottom = 65.0
+text = "pause"
+
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

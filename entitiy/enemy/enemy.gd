@@ -94,5 +94,6 @@ func _update_arrows(delta: float) -> void:
 			continue
 
 		if is_instance_valid(player) and arrow.global_position.distance_to(player.global_position) < 30.0:
+			Gamemanager.take_damage(5.0)
 			arrow.queue_free()
 			arrows.erase(arrow_data)

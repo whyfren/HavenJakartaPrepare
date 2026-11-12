@@ -4,6 +4,13 @@ const SPEED = 600.0
 
 @onready var animasi: AnimatedSprite2D = $AnimatedSprite2D
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		Gamemanager.take_damage(10)
+
+	if event.is_action_pressed("ui_select"):
+		Gamemanager.heal(10)
+
 func _physics_process(_delta: float) -> void:
 	var move := Input.get_vector("left", "right", "up", "down")
 

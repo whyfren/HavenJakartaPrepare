@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvdn14qmd70d4" path="res://coins.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cyqb7dwg3khgm" path="res://UI/pause_menu.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cwn87kmgut4hx" path="res://entitiy/enemy/enemy.tscn" id="8_enemy"]
+[ext_resource type="PackedScene" uid="uid://dc8ldq2y53pwc" path="res://UI/hud.tscn" id="11_efxa6"]
 
 [node name="Main" type="Node2D" unique_id=698439086]
 script = ExtResource("1_5vw27")
@@ -44,5 +45,7 @@ position = Vector2(15, 221)
 position = Vector2(280, 80)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=390738117]
+
+[node name="HUD" parent="UI" unique_id=634769212 instance=ExtResource("11_efxa6")]
 
 [node name="PauseMenu" parent="UI" unique_id=143324651 instance=ExtResource("7_5vw27")]
