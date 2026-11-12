@@ -13,8 +13,13 @@ func _on_game_over() -> void:
 
 
 func _on_restart_pressed() -> void:
+	Audiomanager.play_sfx("click")
 	Gamemanager.restart_game()
+	
+func _on_settings_pressed() -> void:
+	Audiomanager.play_sfx("click")
 
 
 func _on_main_menu_pressed() -> void:
+	Audiomanager.play_sfx("click")
 	Gamemanager.go_to_main_menu()

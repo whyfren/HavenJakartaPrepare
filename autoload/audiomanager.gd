@@ -2,7 +2,8 @@ extends Node
 
 var sounds = {
 	"fireball": preload("res://asset/sound/floraphonic-fireball-whoosh-1-179125.mp3"),
-	"blast": preload("res://asset/sound/yodguard-fire-magic-6-378641.mp3")
+	"blast": preload("res://asset/sound/yodguard-fire-magic-6-378641.mp3"),
+	"click": preload("res://asset/sound/universfield-click-button-140881.mp3")
 }
 
 func play_sfx(sound_name: String):

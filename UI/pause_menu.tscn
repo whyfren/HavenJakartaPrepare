@@ -49,4 +49,5 @@ theme_override_fonts/font = ExtResource("2_jfm1e")
 text = " Main Menu"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

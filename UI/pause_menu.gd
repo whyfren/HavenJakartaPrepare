@@ -8,12 +8,17 @@ func _ready() -> void:
 func _on_pause_changed(paused: bool) -> void:
 	visible = paused
 
+func _on_settings_pressed() -> void:
+	Audiomanager.play_sfx("click")
+
 func _on_continue_pressed():
 	Gamemanager.resume_game()
+	Audiomanager.play_sfx("click")
 	hide()
 
 func _on_main_menu_pressed():
 	Gamemanager.resume_game()
+	Audiomanager.play_sfx("click")
 	get_tree().change_scene_to_file(
         "res://UI/Menu.tscn"
 	)

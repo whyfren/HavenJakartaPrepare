@@ -18,6 +18,7 @@ func _on_health_changed(current: float, maximum: float) -> void:
 	
 	
 func _on_pause_pressed():
+	Audiomanager.play_sfx("click")
 	Gamemanager.toggle_pause()
 
 
