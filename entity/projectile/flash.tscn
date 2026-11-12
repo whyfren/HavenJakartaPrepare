@@ -1,0 +1,506 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://entity/projectile/effect.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://coa7k1eh4e6ou" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_arcane_e_32.png" id="tex_arcane"]
+[ext_resource type="Texture2D" uid="uid://bdkqv82nmhjrl" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_crimson_e_32.png" id="tex_crimson"]
+[ext_resource type="Texture2D" uid="uid://dfifpro6ih8df" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_electric_e_32.png" id="tex_electric"]
+[ext_resource type="Texture2D" uid="uid://b5qsvpgaxwbc7" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_fire_e_32.png" id="tex_fire"]
+[ext_resource type="Texture2D" uid="uid://djk0yh8w7ldl8" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_holy_e_32.png" id="tex_holy"]
+[ext_resource type="Texture2D" uid="uid://dwhei1o18mv8l" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_ice_e_32.png" id="tex_ice"]
+[ext_resource type="Texture2D" uid="uid://gcsrlikx54mt" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_plasma_e_32.png" id="tex_plasma"]
+[ext_resource type="Texture2D" uid="uid://cf5tpse0d8k3c" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_rose_e_32.png" id="tex_rose"]
+[ext_resource type="Texture2D" uid="uid://cng3hcjvcwlte" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_shadow_e_32.png" id="tex_shadow"]
+[ext_resource type="Texture2D" uid="uid://cgr8e25i35fhe" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_energy_toxic_e_32.png" id="tex_toxic"]
+[ext_resource type="Texture2D" uid="uid://chf6o2ymgxkt3" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_pistol_e_32.png" id="tex_pistol"]
+[ext_resource type="Texture2D" uid="uid://bvd4indpctb2w" path="res://asset/projectile-arsenal_v1.0.0/sheets/projectile-arsenal_flash_rifle_e_32.png" id="tex_rifle"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arcane_0"]
+atlas = ExtResource("tex_arcane")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arcane_1"]
+atlas = ExtResource("tex_arcane")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arcane_2"]
+atlas = ExtResource("tex_arcane")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arcane_3"]
+atlas = ExtResource("tex_arcane")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arcane_4"]
+atlas = ExtResource("tex_arcane")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crimson_0"]
+atlas = ExtResource("tex_crimson")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crimson_1"]
+atlas = ExtResource("tex_crimson")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crimson_2"]
+atlas = ExtResource("tex_crimson")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crimson_3"]
+atlas = ExtResource("tex_crimson")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crimson_4"]
+atlas = ExtResource("tex_crimson")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_electric_0"]
+atlas = ExtResource("tex_electric")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_electric_1"]
+atlas = ExtResource("tex_electric")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_electric_2"]
+atlas = ExtResource("tex_electric")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_electric_3"]
+atlas = ExtResource("tex_electric")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_electric_4"]
+atlas = ExtResource("tex_electric")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fire_0"]
+atlas = ExtResource("tex_fire")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fire_1"]
+atlas = ExtResource("tex_fire")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fire_2"]
+atlas = ExtResource("tex_fire")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fire_3"]
+atlas = ExtResource("tex_fire")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fire_4"]
+atlas = ExtResource("tex_fire")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holy_0"]
+atlas = ExtResource("tex_holy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holy_1"]
+atlas = ExtResource("tex_holy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holy_2"]
+atlas = ExtResource("tex_holy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holy_3"]
+atlas = ExtResource("tex_holy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holy_4"]
+atlas = ExtResource("tex_holy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ice_0"]
+atlas = ExtResource("tex_ice")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ice_1"]
+atlas = ExtResource("tex_ice")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ice_2"]
+atlas = ExtResource("tex_ice")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ice_3"]
+atlas = ExtResource("tex_ice")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ice_4"]
+atlas = ExtResource("tex_ice")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plasma_0"]
+atlas = ExtResource("tex_plasma")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plasma_1"]
+atlas = ExtResource("tex_plasma")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plasma_2"]
+atlas = ExtResource("tex_plasma")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plasma_3"]
+atlas = ExtResource("tex_plasma")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plasma_4"]
+atlas = ExtResource("tex_plasma")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rose_0"]
+atlas = ExtResource("tex_rose")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rose_1"]
+atlas = ExtResource("tex_rose")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rose_2"]
+atlas = ExtResource("tex_rose")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rose_3"]
+atlas = ExtResource("tex_rose")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rose_4"]
+atlas = ExtResource("tex_rose")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shadow_0"]
+atlas = ExtResource("tex_shadow")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shadow_1"]
+atlas = ExtResource("tex_shadow")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shadow_2"]
+atlas = ExtResource("tex_shadow")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shadow_3"]
+atlas = ExtResource("tex_shadow")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shadow_4"]
+atlas = ExtResource("tex_shadow")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toxic_0"]
+atlas = ExtResource("tex_toxic")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toxic_1"]
+atlas = ExtResource("tex_toxic")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toxic_2"]
+atlas = ExtResource("tex_toxic")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toxic_3"]
+atlas = ExtResource("tex_toxic")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toxic_4"]
+atlas = ExtResource("tex_toxic")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pistol_0"]
+atlas = ExtResource("tex_pistol")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pistol_1"]
+atlas = ExtResource("tex_pistol")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pistol_2"]
+atlas = ExtResource("tex_pistol")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pistol_3"]
+atlas = ExtResource("tex_pistol")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pistol_4"]
+atlas = ExtResource("tex_pistol")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rifle_0"]
+atlas = ExtResource("tex_rifle")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rifle_1"]
+atlas = ExtResource("tex_rifle")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rifle_2"]
+atlas = ExtResource("tex_rifle")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rifle_3"]
+atlas = ExtResource("tex_rifle")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rifle_4"]
+atlas = ExtResource("tex_rifle")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flash"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arcane_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arcane_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arcane_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arcane_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arcane_4")
+}],
+"loop": false,
+"name": &"arcane",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crimson_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crimson_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crimson_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crimson_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crimson_4")
+}],
+"loop": false,
+"name": &"crimson",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_electric_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_electric_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_electric_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_electric_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_electric_4")
+}],
+"loop": false,
+"name": &"electric",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fire_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fire_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fire_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fire_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fire_4")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holy_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holy_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holy_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holy_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holy_4")
+}],
+"loop": false,
+"name": &"holy",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ice_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ice_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ice_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ice_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ice_4")
+}],
+"loop": false,
+"name": &"ice",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plasma_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plasma_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plasma_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plasma_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plasma_4")
+}],
+"loop": false,
+"name": &"plasma",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rose_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rose_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rose_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rose_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rose_4")
+}],
+"loop": false,
+"name": &"rose",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shadow_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shadow_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shadow_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shadow_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shadow_4")
+}],
+"loop": false,
+"name": &"shadow",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toxic_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toxic_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toxic_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toxic_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toxic_4")
+}],
+"loop": false,
+"name": &"toxic",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pistol_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pistol_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pistol_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pistol_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pistol_4")
+}],
+"loop": false,
+"name": &"pistol",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rifle_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rifle_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rifle_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rifle_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rifle_4")
+}],
+"loop": false,
+"name": &"rifle",
+"speed": 24.0
+}]
+
+[node name="Flash" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_flash")
+animation = &"fire"
+autoplay = "fire"
