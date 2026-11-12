@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cyqb7dwg3khgm" path="res://UI/pause_menu.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cwn87kmgut4hx" path="res://entitiy/enemy/enemy.tscn" id="8_enemy"]
 [ext_resource type="PackedScene" uid="uid://dc8ldq2y53pwc" path="res://UI/hud.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://da12i6sl2mb4j" path="res://game_over.tscn" id="12_dg77c"]
 
 [node name="Main" type="Node2D" unique_id=698439086]
 script = ExtResource("1_5vw27")
@@ -50,3 +51,5 @@ player = NodePath("../knightplayer")
 [node name="HUD" parent="UI" unique_id=634769212 instance=ExtResource("11_efxa6")]
 
 [node name="PauseMenu" parent="UI" unique_id=143324651 instance=ExtResource("7_5vw27")]
+
+[node name="Game over" parent="UI" unique_id=613619843 instance=ExtResource("12_dg77c")]

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://da12i6sl2mb4j"]
+
+[ext_resource type="Script" uid="uid://do3y0x14xgx73" path="res://game_over.gd" id="1_yxx3c"]
+[ext_resource type="FontFile" uid="uid://dd2kupryptx4p" path="res://asset/font/Ascharge.ttf" id="2_ccer4"]
+
+[sub_resource type="FontVariation" id="FontVariation_6rryj"]
+base_font = ExtResource("2_ccer4")
+spacing_glyph = 1
+
+[node name="Game over" type="Control" unique_id=613619843]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+script = ExtResource("1_yxx3c")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1174545564]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 112.0
+offset_right = 506.0
+offset_bottom = 240.0
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=785433674]
+texture_filter = 6
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1220270820]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6rryj")
+theme_override_font_sizes/font_size = 24
+text = "Game Over"
+
+[node name="Restart" type="Button" parent="CenterContainer/VBoxContainer" unique_id=371464684]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ccer4")
+text = "Restart"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=179064416]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ccer4")
+text = " Settings"
+
+[node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=957162855]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ccer4")
+text = " Main Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
