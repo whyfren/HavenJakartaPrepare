@@ -41,8 +41,9 @@ scale = Vector2(3, 3)
 [node name="coins" parent="Level" unique_id=1224003275 instance=ExtResource("6_7mycd")]
 position = Vector2(15, 221)
 
-[node name="Enemy" parent="Level" unique_id=26177553 instance=ExtResource("8_enemy")]
-position = Vector2(280, 80)
+[node name="Enemy" parent="Level" unique_id=26177553 node_paths=PackedStringArray("player") instance=ExtResource("8_enemy")]
+position = Vector2(224, 597)
+player = NodePath("../knightplayer")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=390738117]
 

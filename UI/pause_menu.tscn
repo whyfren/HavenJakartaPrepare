@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://cyqb7dwg3khgm"]
 
 [ext_resource type="Script" uid="uid://cftuldev1lt1h" path="res://UI/pause_menu.gd" id="1_ltd3m"]
+[ext_resource type="FontFile" uid="uid://dd2kupryptx4p" path="res://asset/font/Ascharge.ttf" id="2_jfm1e"]
+
+[sub_resource type="FontVariation" id="FontVariation_6rryj"]
+base_font = ExtResource("2_jfm1e")
+spacing_glyph = 1
 
 [node name="PauseMenu" type="Control" unique_id=613619843]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1154.0
+offset_bottom = 648.0
 script = ExtResource("1_ltd3m")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1174545564]
@@ -19,23 +24,59 @@ offset_bottom = 240.0
 scale = Vector2(3, 3)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=785433674]
+texture_filter = 6
 layout_mode = 2
 
 [node name="GameTitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1220270820]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6rryj")
+theme_override_font_sizes/font_size = 24
 text = "Game Paused"
 
 [node name="Continue" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1642153492]
 layout_mode = 2
+text = " "
+
+[node name="ContinueTitle" type="Label" parent="CenterContainer/VBoxContainer/Continue" unique_id=518000804]
+layout_mode = 0
+offset_left = -0.3333332
+offset_top = 1.0000025
+offset_right = 128.33334
+offset_bottom = 29.999998
+theme_override_fonts/font = SubResource("FontVariation_6rryj")
 text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=371464684]
 layout_mode = 2
+text = " "
+
+[node name="SettingsTitle" type="Label" parent="CenterContainer/VBoxContainer/Settings" unique_id=1462249555]
+layout_mode = 0
+offset_left = -0.33333334
+offset_top = 1.0
+offset_right = 129.00002
+offset_bottom = 29.999996
+theme_override_fonts/font = SubResource("FontVariation_6rryj")
 text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=957162855]
 layout_mode = 2
+text = " "
+
+[node name="MenuTitle" type="Label" parent="CenterContainer/VBoxContainer/Main Menu" unique_id=1918907217]
+layout_mode = 0
+offset_left = -0.6666667
+offset_top = 1.0000038
+offset_right = 128.66666
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_6rryj")
 text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dcqb8n0208asj" path="res://asset/coins/coin2_20x20.png" id="1_tsooq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_behr0"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_665jj"]
 atlas = ExtResource("1_tsooq")
 region = Rect2(0, 0, 20, 20)
@@ -75,13 +73,17 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="coins" type="StaticBody2D" unique_id=1571024601]
+[sub_resource type="CircleShape2D" id="CircleShape2D_behr0"]
+radius = 33.19834
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=341967418]
-scale = Vector2(0.69280577, 0.69280577)
-shape = SubResource("CircleShape2D_behr0")
+[node name="coins" type="Area2D" unique_id=1432496211]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=976776784]
 scale = Vector2(2.5555391, 2.5555391)
 sprite_frames = SubResource("SpriteFrames_behr0")
+autoplay = "default"
 frame_progress = 0.97269017
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=341967418]
+scale = Vector2(0.6928057, 0.6928057)
+shape = SubResource("CircleShape2D_behr0")

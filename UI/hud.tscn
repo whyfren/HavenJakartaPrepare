@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://dc8ldq2y53pwc"]
 
 [ext_resource type="Script" uid="uid://eb36dhuhxsil" path="res://UI/hud.gd" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://brr2jtpm3yhu3" path="res://asset/font/JetBrainsMono-VariableFont_wght.ttf" id="2_bytes"]
+[ext_resource type="FontFile" uid="uid://dd2kupryptx4p" path="res://asset/font/Ascharge.ttf" id="3_2o5uh"]
+
+[sub_resource type="Theme" id="Theme_bytes"]
+default_font = ExtResource("2_bytes")
+default_font_size = 16
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_b1lf8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_behr0"]
+font = ExtResource("2_bytes")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_2o5uh"]
+font = ExtResource("3_2o5uh")
+font_size = 24
 
 [node name="HUD" type="Control" unique_id=634769212]
 layout_mode = 3
@@ -12,27 +28,49 @@ grow_vertical = 2
 script = ExtResource("1_37p78")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=74319950]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 54.0
+offset_left = 99.0
 offset_top = 22.0
 offset_right = 1068.0
 offset_bottom = 66.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="." unique_id=1251942918]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 33.0
-offset_right = 68.0
-offset_bottom = 56.0
-text = "hp"
-
 [node name="Pause" type="Button" parent="." unique_id=1224613238]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1077.0
 offset_top = 22.0
 offset_right = 1144.0
 offset_bottom = 65.0
-text = "pause"
+theme = SubResource("Theme_bytes")
+icon = SubResource("CanvasTexture_b1lf8")
+
+[node name="Label2" type="Label" parent="Pause" unique_id=2145209840]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 66.0
+offset_bottom = 37.0
+text = "⏸"
+label_settings = SubResource("LabelSettings_behr0")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=992552125]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 24.0
+offset_right = 91.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1251942918]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 71.0
+offset_bottom = 34.0
+text = "hp"
+label_settings = SubResource("LabelSettings_2o5uh")
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

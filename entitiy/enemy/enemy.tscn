@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwn87kmgut4hx"]
 
 [ext_resource type="Script" uid="uid://d4lc4l6ojwl67" path="res://entitiy/enemy/enemy.gd" id="1_enemy"]
-[ext_resource type="Texture2D" uid="uid://dkdhf5lg7nqk5" path="res://icon.svg" id="2_icon"]
+[ext_resource type="Texture2D" uid="uid://bcuejy34wb5rw" path="res://asset/UI/internet-troll-meme-information-wallpaper-trollface-png-3b6fa299dec8747b5983f03bbd657f17.png" id="2_shecv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
 radius = 28.0
@@ -11,8 +11,8 @@ script = ExtResource("1_enemy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=783393341]
 modulate = Color(0.9, 0.25, 0.25, 1)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_icon")
+scale = Vector2(0.090680696, 0.090680696)
+texture = ExtResource("2_shecv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=803551548]
 shape = SubResource("CircleShape2D_enemy")

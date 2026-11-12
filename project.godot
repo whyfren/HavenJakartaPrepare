@@ -24,6 +24,10 @@ Gamemanager="*uid://dwc7wvulol83g"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="HavenJakartaPrepare"
+
 [input]
 
 up={

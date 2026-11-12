@@ -7,26 +7,23 @@ const SHOOT_COOLDOWN := 1.2
 const WANDER_CHANGE_TIME := 2.5
 const ARROW_LIFETIME := 3.0
 
-@export var player_path: NodePath
+# @export var player_path: NodePath
 
 var wander_direction := Vector2.ZERO
 var wander_time_left := 0.0
 var shoot_time_left := 0.0
 var arrows: Array[Dictionary] = []
-var player: Node2D
+@export var player: Node2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	randomize()
 	_choose_wander_direction()
-	if not player_path.is_empty():
-		player = get_node_or_null(player_path) as Node2D
+	# if not player_path.is_empty():
+	# 	player = get_node_or_null(player_path) as Node2D
 
 func _physics_process(delta: float) -> void:
-	if not is_instance_valid(player):
-		player = get_tree().get_first_node_in_group("player") as Node2D
-
 	wander_time_left -= delta
 	shoot_time_left -= delta
 	

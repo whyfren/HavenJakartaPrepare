@@ -68,23 +68,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18yqj"]
-radius = 43.0
-height = 102.0
+radius = 5.0
+height = 56.0
 
-[node name="knightplayer" type="CharacterBody2D" groups=["player"] unique_id=107630186]
+[node name="knightplayer" type="CharacterBody2D" unique_id=107630186 groups=["player"]]
 script = ExtResource("1_lk6q4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1164905277]
-position = Vector2(14, 24)
+position = Vector2(-1, 0)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_18yqj")
 animation = &"walk"
 autoplay = "walk"
-frame = 4
-frame_progress = 0.64707685
+frame_progress = 0.63106656
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=907354581]
-position = Vector2(12, 12)
+position = Vector2(-1, 50)
+rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_18yqj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1810050799]
