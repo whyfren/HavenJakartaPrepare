@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d4lc4l6ojwl67" path="res://entitiy/enemy/enemy.gd" id="1_enemy"]
 [ext_resource type="Texture2D" uid="uid://bcuejy34wb5rw" path="res://asset/UI/internet-troll-meme-information-wallpaper-trollface-png-3b6fa299dec8747b5983f03bbd657f17.png" id="2_shecv"]
-[ext_resource type="AudioStream" uid="uid://c4en333yhb7vv" path="res://asset/sound/floraphonic-fireball-whoosh-1-179125.mp3" id="3_8amd3"]
+[ext_resource type="AudioStream" uid="uid://c4en333yhb7vv" path="res://asset/sound/floraphonic-fireball-whoosh-1-179125.mp3" id="3_sound"]
+[ext_resource type="PackedScene" uid="uid://dv45f6u2q1iov" path="res://entitiy/enemy/hurtbox.tscn" id="4_hurtbox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
 radius = 28.0
@@ -19,6 +20,8 @@ texture = ExtResource("2_shecv")
 shape = SubResource("CircleShape2D_enemy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=201926422]
-stream = ExtResource("3_8amd3")
+stream = ExtResource("3_sound")
 volume_db = -24.312
 pitch_scale = 1.73
+
+[node name="Hurtbox" parent="." unique_id=1569574851 instance=ExtResource("4_hurtbox")]

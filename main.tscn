@@ -4,12 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://blbykpdqyg2bc" path="res://test_map.tscn" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dkdhf5lg7nqk5" path="res://icon.svg" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dnhxsykfrpyo2" path="res://knightplayer.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://tuq0hppjpyda" path="res://entitiy/enemy_spawner.tscn" id="3_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dufgewbn3g71h" path="res://npc.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bq6y37psv75n5" path="res://chest.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cwn87kmgut4hx" path="res://entitiy/enemy/enemy.tscn" id="4_w48qg"]
 [ext_resource type="PackedScene" uid="uid://dhnrap1cocy62" path="res://tiang.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cvdn14qmd70d4" path="res://coins.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cyqb7dwg3khgm" path="res://UI/pause_menu.tscn" id="7_5vw27"]
-[ext_resource type="PackedScene" uid="uid://cwn87kmgut4hx" path="res://entitiy/enemy/enemy.tscn" id="8_enemy"]
 [ext_resource type="PackedScene" uid="uid://dc8ldq2y53pwc" path="res://UI/hud.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://da12i6sl2mb4j" path="res://game_over.tscn" id="12_dg77c"]
 
@@ -22,7 +23,12 @@ scale = Vector2(9, 9)
 [node name="Level" type="Node2D" parent="." unique_id=1502134837]
 y_sort_enabled = true
 
+[node name="EnemySpawner" parent="Level" unique_id=151165010 instance=ExtResource("3_ycdy4")]
+enemy = ExtResource("4_w48qg")
+
 [node name="knightplayer" parent="Level" unique_id=107630186 instance=ExtResource("2_lquwl")]
+unique_name_in_owner = true
+position = Vector2(-510, 18)
 
 [node name="Icon" type="Sprite2D" parent="Level" unique_id=651239542]
 position = Vector2(-113, -132)
@@ -41,26 +47,6 @@ scale = Vector2(3, 3)
 
 [node name="coins" parent="Level" unique_id=1224003275 instance=ExtResource("6_7mycd")]
 position = Vector2(15, 221)
-
-[node name="Enemy" parent="Level" unique_id=26177553 node_paths=PackedStringArray("player") instance=ExtResource("8_enemy")]
-position = Vector2(224, 597)
-player = NodePath("../knightplayer")
-
-[node name="Enemy5" parent="Level" unique_id=1181161 node_paths=PackedStringArray("player") instance=ExtResource("8_enemy")]
-position = Vector2(224, 597)
-player = NodePath("../knightplayer")
-
-[node name="Enemy4" parent="Level" unique_id=1292075255 node_paths=PackedStringArray("player") instance=ExtResource("8_enemy")]
-position = Vector2(224, 597)
-player = NodePath("../knightplayer")
-
-[node name="Enemy3" parent="Level" unique_id=1844279374 node_paths=PackedStringArray("player") instance=ExtResource("8_enemy")]
-position = Vector2(224, 597)
-player = NodePath("../knightplayer")
-
-[node name="Enemy2" parent="Level" unique_id=781613126 node_paths=PackedStringArray("player") instance=ExtResource("8_enemy")]
-position = Vector2(224, 597)
-player = NodePath("../knightplayer")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=390738117]
 

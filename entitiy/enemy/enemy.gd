@@ -8,6 +8,7 @@ const WANDER_CHANGE_TIME := 2.5
 const FIREBALL_LIFETIME := 3.0
 const FIREBALL_SCENE := preload("res://entity/projectile/fireball.tscn")
 
+const HIT_EFFECT_SCENE := preload("res://entity/projectile/hit.tscn")
 # @export var player_path: NodePath
 
 var wander_direction := Vector2.ZERO
@@ -21,14 +22,12 @@ var shoot_time_left := 0.0
 func _ready() -> void:
 	randomize()
 	_choose_wander_direction()
-
-
+	if not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta: float) -> void:
 	wander_time_left -= delta
 	shoot_time_left -= delta
-	
-	print(velocity.angle())
 
 	var target_in_range := is_instance_valid(player) and global_position.distance_to(player.global_position) <= VIEW_RANGE
 	if target_in_range:
@@ -63,3 +62,16 @@ func _shoot_fireball(target_position: Vector2) -> void:
 	fireball.lifetime = FIREBALL_LIFETIME
 	audio.play()
 	get_tree().current_scene.add_child(fireball)
+
+func take_damage(amount: int) -> void:
+	if HIT_EFFECT_SCENE and get_tree().current_scene:
+		var hit := HIT_EFFECT_SCENE.instantiate()
+		hit.global_position = global_position
+		hit.scale = scale * 4.0
+		hit.animation_name = "fire"
+		get_tree().current_scene.call_deferred("add_child", hit)
+
+	var explode: AudioStream = load("res://asset/sound/yodguard-fire-magic-6-378641.mp3")
+	audio.stream = explode
+	audio.play()
+	queue_free()
