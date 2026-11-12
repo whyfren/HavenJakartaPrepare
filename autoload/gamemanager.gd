@@ -3,6 +3,7 @@ extends Node
 
 signal pause_changed(paused: bool)
 signal game_over_started()
+signal damaged()
 signal health_changed(current_health: float, max_health: float)
 @onready var pause_menu = "res://UI/pause_menu.tscn"
 @onready var is_game_over: bool = false
@@ -15,6 +16,7 @@ func take_damage(amount: float) -> void:
 	if is_game_over:
 		return
 	
+	damaged.emit()
 	current_health = maxf(current_health - amount, 0.0)
 	health_changed.emit(current_health, max_health)
 	
