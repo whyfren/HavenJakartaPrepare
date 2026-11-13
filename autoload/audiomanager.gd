@@ -6,13 +6,14 @@ var sounds = {
 	"click": preload("res://asset/sound/universfield-click-button-140881.mp3")
 }
 
-func play_sfx(sound_name: String):
+func play_sfx(sound_name: String, pitch: float = 1.0):
 	if not sounds.has(sound_name):
 		push_warning("Sound tidak ditemukan: " + sound_name)
 		return
 
 	var player = AudioStreamPlayer.new()
 	player.stream = sounds[sound_name]
+	player.pitch_scale = pitch
 
 	add_child(player)
 	player.finished.connect(player.queue_free)

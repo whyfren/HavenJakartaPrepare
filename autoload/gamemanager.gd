@@ -1,16 +1,56 @@
 extends Node
 
-
 signal pause_changed(paused: bool)
 signal game_over_started()
 signal damaged()
 signal health_changed(current_health: float, max_health: float)
+signal exp_changed(current_exp: float, max_exp: float, level: int)
+signal level_up(new_level: int)
+
 @onready var pause_menu = "res://UI/pause_menu.tscn"
 @onready var is_game_over: bool = false
 
 var max_health: float = 100.0
 var current_health: float = 100.0
 var is_paused: bool = false
+
+# Sistem Level, EXP & Scaling
+var level: int = 1
+var current_exp: float = 0.0
+var max_exp: float = 20.0
+var game_time: float = 0.0
+
+func _ready() -> void:
+	Engine.time_scale = 1.0
+
+func _process(delta: float) -> void:
+	if not is_paused and not is_game_over:
+		game_time += delta
+
+func add_exp(amount: float) -> void:
+	if is_game_over:
+		return
+	current_exp += amount
+	while current_exp >= max_exp:
+		current_exp -= max_exp
+		level += 1
+		max_exp = roundf(max_exp * 1.5)
+		# Reward level up: Tambah Max HP dan heal
+		max_health += 10.0
+		heal(max_health * 0.3)
+		level_up.emit(level)
+		Audiomanager.play_sfx("click", 1.8)
+	exp_changed.emit(current_exp, max_exp, level)
+
+func get_player_damage(base_damage: int = 10) -> int:
+	# Setiap naik level, damage player bertambah +5
+	return base_damage + (level - 1) * 5
+
+func get_enemy_scaling_hp(base_hp: float = 25.0) -> float:
+	# Scaling: Setiap 15 detik HP musuh bertambah 5, ditambah bonus sesuai level player
+	var time_bonus: float = floorf(game_time / 15.0) * 5.0
+	var level_bonus: float = (level - 1) * 5.0
+	return base_hp + time_bonus + level_bonus
 
 func take_damage(amount: float) -> void:
 	if is_game_over:
@@ -22,7 +62,6 @@ func take_damage(amount: float) -> void:
 	
 	if current_health <= 0:
 		trigger_game_over()
-
 
 func heal(amount: float) -> void:
 	current_health = minf(current_health + amount, max_health)
@@ -54,17 +93,27 @@ func resume_game() -> void:
 func reset_health() -> void:
 	current_health = max_health
 	health_changed.emit(current_health, max_health)
+
+func reset_all() -> void:
+	level = 1
+	current_exp = 0.0
+	max_exp = 20.0
+	game_time = 0.0
+	max_health = 100.0
+	current_health = max_health
+	health_changed.emit(current_health, max_health)
+	exp_changed.emit(current_exp, max_exp, level)
 	
 func restart_game() -> void:
 	is_game_over = false
 	is_paused = false
 	get_tree().paused = false
-	reset_health()
+	reset_all()
 	get_tree().reload_current_scene()
 	
 func go_to_main_menu() -> void:
 	is_game_over = false
 	is_paused = false
 	get_tree().paused = false
-	reset_health()
+	reset_all()
 	get_tree().change_scene_to_file("res://UI/Menu.tscn")

@@ -8,10 +8,32 @@ const SPEED = 600.0
 
 func _ready():
 	Gamemanager.damaged.connect(damaged)
+	Gamemanager.level_up.connect(_on_level_up)
 	
 	camera.enabled = true
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0
+
+func _on_level_up(new_level: int) -> void:
+	# Efek kilatan emas saat level up
+	if animasi:
+		var orig_mod: Color = animasi.modulate
+		animasi.modulate = Color(2.5, 2.0, 0.4, 1.0)
+		var tween := create_tween()
+		tween.tween_property(animasi, "modulate", orig_mod, 0.5)
+
+	# Teks mengambang "LEVEL UP!"
+	var lbl := Label.new()
+	lbl.text = "LEVEL UP! (LV. %d)\nDAMAGE +5" % new_level
+	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lbl.position = Vector2(-70, -90)
+	lbl.modulate = Color(1.0, 0.9, 0.2, 1.0)
+	add_child(lbl)
+
+	var tween_lbl := create_tween()
+	tween_lbl.tween_property(lbl, "position:y", -140.0, 1.2)
+	tween_lbl.parallel().tween_property(lbl, "modulate:a", 0.0, 1.2)
+	tween_lbl.tween_callback(lbl.queue_free)
 
 func damaged() -> void:
 	await camera_shake(5.0, 0.2)
@@ -59,6 +81,8 @@ func attack() -> void:
 	animasi.play("attack")
 	hitbox.call("attack")
 
+func is_parrying() -> bool:
+	return is_attacking
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animasi.animation == "attack":
