@@ -127,10 +127,6 @@ func parry(player: Node2D) -> void:
 	lifetime = 2.5
 	rotation = direction.angle()
 
-	if animated_sprite:
-		animated_sprite.modulate = Color(2.5, 2.0, 0.4, 1.0)
-	scale = scale * 1.3
-
 	if HIT_EFFECT_SCENE and get_tree().current_scene:
 		var spark := HIT_EFFECT_SCENE.instantiate()
 		spark.global_position = global_position
