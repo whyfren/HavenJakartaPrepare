@@ -20,7 +20,6 @@ func _ready() -> void:
 	_update_exp(Gamemanager.current_exp, Gamemanager.max_exp, Gamemanager.level)
 
 func _setup_exp_and_level_ui() -> void:
-	# 1. Panel & Label untuk Level
 	level_panel = Panel.new()
 	level_panel.name = "LevelPanel"
 	level_panel.offset_left = 12.0
@@ -40,7 +39,6 @@ func _setup_exp_and_level_ui() -> void:
 	level_panel.add_child(level_label)
 	add_child(level_panel)
 
-	# 2. Progress Bar untuk EXP
 	exp_bar = ProgressBar.new()
 	exp_bar.name = "ExpBar"
 	exp_bar.offset_left = 99.0
@@ -66,7 +64,6 @@ func _setup_exp_and_level_ui() -> void:
 	exp_bar.add_theme_stylebox_override("background", sb_bg)
 	exp_bar.add_theme_stylebox_override("fill", sb_fill)
 
-	# Label di dalam EXP Bar
 	exp_label = Label.new()
 	exp_label.name = "ExpLabel"
 	exp_label.text = "EXP: 0 / 20"

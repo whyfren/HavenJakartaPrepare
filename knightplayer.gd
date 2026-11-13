@@ -15,14 +15,12 @@ func _ready():
 	camera.position_smoothing_speed = 5.0
 
 func _on_level_up(new_level: int) -> void:
-	# Efek kilatan emas saat level up
 	if animasi:
 		var orig_mod: Color = animasi.modulate
 		animasi.modulate = Color(2.5, 2.0, 0.4, 1.0)
 		var tween := create_tween()
 		tween.tween_property(animasi, "modulate", orig_mod, 0.5)
 
-	# Teks mengambang "LEVEL UP!"
 	var lbl := Label.new()
 	lbl.text = "LEVEL UP! (LV. %d)\nDAMAGE +5" % new_level
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

@@ -5,17 +5,18 @@ const VIEW_RANGE := 500.0
 const FIREBALL_SPEED := 420.0
 const SHOOT_COOLDOWN := 1.2
 const WANDER_CHANGE_TIME := 2.5
-const FIREBALL_LIFETIME := 3.0
+const FIREBALL_LIFETIME := 1.8
 const FIREBALL_SCENE := preload("res://entity/projectile/fireball.tscn")
 const HIT_EFFECT_SCENE := preload("res://entity/projectile/hit.tscn")
 
-@export var base_hp: float = 25.0
+@export var base_hp: float = 60.0
 @export var exp_reward: float = 10.0
 @export var player: Node2D
 
-var max_hp: float = 25.0
-var current_hp: float = 25.0
+var max_hp: float = 60.0
+var current_hp: float = 60.0
 var hp_bar: ProgressBar
+var is_invulnerable: bool = false
 
 var wander_direction := Vector2.ZERO
 var wander_time_left := 0.0
@@ -30,8 +31,7 @@ func _ready() -> void:
 	_choose_wander_direction()
 	if not is_instance_valid(player):
 		player = get_tree().get_first_node_in_group("player")
-	
-	# Scaling HP berdasarkan waktu bermain dan level
+
 	max_hp = Gamemanager.get_enemy_scaling_hp(base_hp)
 	current_hp = max_hp
 	_setup_hp_bar()
@@ -44,25 +44,25 @@ func _setup_hp_bar() -> void:
 	hp_bar.position = Vector2(-25, -42)
 	hp_bar.max_value = max_hp
 	hp_bar.value = current_hp
-	
+
 	var sb_bg := StyleBoxFlat.new()
-	sb_bg.bg_color = Color(0.1, 0.1, 0.1, 0.8)
+	sb_bg.bg_color = Color(0.15, 0.15, 0.15, 0.85)
 	sb_bg.corner_radius_top_left = 2
 	sb_bg.corner_radius_top_right = 2
 	sb_bg.corner_radius_bottom_left = 2
 	sb_bg.corner_radius_bottom_right = 2
-	
+
 	var sb_fill := StyleBoxFlat.new()
-	sb_fill.bg_color = Color(0.9, 0.2, 0.2, 0.95)
+	sb_fill.bg_color = Color(0.85, 0.2, 0.2, 0.95)
 	sb_fill.corner_radius_top_left = 2
 	sb_fill.corner_radius_top_right = 2
 	sb_fill.corner_radius_bottom_left = 2
 	sb_fill.corner_radius_bottom_right = 2
-	
+
 	hp_bar.add_theme_stylebox_override("background", sb_bg)
 	hp_bar.add_theme_stylebox_override("fill", sb_fill)
 	add_child(hp_bar)
-	hp_bar.visible = false # Ditampilkan saat pertama kali terkena damage
+	hp_bar.visible = true
 
 func _physics_process(delta: float) -> void:
 	wander_time_left -= delta
@@ -103,12 +103,14 @@ func _shoot_fireball(target_position: Vector2) -> void:
 	get_tree().current_scene.add_child(fireball)
 
 func take_damage(amount: int) -> void:
-	current_hp -= amount
+	if is_invulnerable or current_hp <= 0:
+		return
+	is_invulnerable = true
+	current_hp = maxf(current_hp - amount, 0.0)
+
 	if hp_bar:
-		hp_bar.visible = true
 		hp_bar.value = current_hp
 
-	# Efek percikan saat terkena damage
 	if HIT_EFFECT_SCENE and get_tree().current_scene:
 		var hit := HIT_EFFECT_SCENE.instantiate()
 		hit.global_position = global_position
@@ -116,23 +118,26 @@ func take_damage(amount: int) -> void:
 		hit.animation_name = "fire"
 		get_tree().current_scene.call_deferred("add_child", hit)
 
-	# Flash putih sesaat pada sprite musuh
 	if sprite:
 		var orig_color: Color = sprite.modulate
 		sprite.modulate = Color(2.5, 2.5, 2.5, 1.0)
-		get_tree().create_timer(0.08).timeout.connect(func():
+		get_tree().create_timer(0.12).timeout.connect(func():
 			if is_instance_valid(sprite):
 				sprite.modulate = orig_color
+			is_invulnerable = false
+		)
+	else:
+		get_tree().create_timer(0.12).timeout.connect(func():
+			is_invulnerable = false
 		)
 
 	if current_hp <= 0:
 		_die()
 
 func _die() -> void:
-	# Berikan EXP ke player
 	Gamemanager.add_exp(exp_reward)
 	Audiomanager.play_sfx("blast")
-	
+
 	if HIT_EFFECT_SCENE and get_tree().current_scene:
 		var hit := HIT_EFFECT_SCENE.instantiate()
 		hit.global_position = global_position

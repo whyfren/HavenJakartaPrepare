@@ -14,7 +14,6 @@ var max_health: float = 100.0
 var current_health: float = 100.0
 var is_paused: bool = false
 
-# Sistem Level, EXP & Scaling
 var level: int = 1
 var current_exp: float = 0.0
 var max_exp: float = 20.0
@@ -35,20 +34,17 @@ func add_exp(amount: float) -> void:
 		current_exp -= max_exp
 		level += 1
 		max_exp = roundf(max_exp * 1.5)
-		# Reward level up: Tambah Max HP dan heal
 		max_health += 10.0
 		heal(max_health * 0.3)
 		level_up.emit(level)
 		Audiomanager.play_sfx("click", 1.8)
 	exp_changed.emit(current_exp, max_exp, level)
 
-func get_player_damage(base_damage: int = 10) -> int:
-	# Setiap naik level, damage player bertambah +5
+func get_player_damage(base_damage: int = 20) -> int:
 	return base_damage + (level - 1) * 5
 
-func get_enemy_scaling_hp(base_hp: float = 25.0) -> float:
-	# Scaling: Setiap 15 detik HP musuh bertambah 5, ditambah bonus sesuai level player
-	var time_bonus: float = floorf(game_time / 15.0) * 5.0
+func get_enemy_scaling_hp(base_hp: float = 60.0) -> float:
+	var time_bonus: float = floorf(game_time / 60.0) * 10.0
 	var level_bonus: float = (level - 1) * 5.0
 	return base_hp + time_bonus + level_bonus
 
